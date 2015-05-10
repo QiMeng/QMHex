@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C19A4DA1AFE469400EDDEED /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C19A4D91AFE469400EDDEED /* MainTableViewController.m */; };
 		FF1F78AF1AF84E0C00913878 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1F78AE1AF84E0C00913878 /* main.m */; };
 		FF1F78B21AF84E0C00913878 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1F78B11AF84E0C00913878 /* AppDelegate.m */; };
 		FF1F78B51AF84E0C00913878 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1F78B41AF84E0C00913878 /* ViewController.m */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C19A4D81AFE469400EDDEED /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		6C19A4D91AFE469400EDDEED /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		FF1F78A91AF84E0C00913878 /* QMHex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QMHex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1F78AD1AF84E0C00913878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF1F78AE1AF84E0C00913878 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 				FF1F78B11AF84E0C00913878 /* AppDelegate.m */,
 				FF1F78B31AF84E0C00913878 /* ViewController.h */,
 				FF1F78B41AF84E0C00913878 /* ViewController.m */,
+				6C19A4D81AFE469400EDDEED /* MainTableViewController.h */,
+				6C19A4D91AFE469400EDDEED /* MainTableViewController.m */,
 				FF1F78D21AF8541A00913878 /* Common.h */,
 				FF1F78D31AF8541A00913878 /* Common.m */,
 				FF1F78B61AF84E0C00913878 /* Main.storyboard */,
@@ -227,6 +232,7 @@
 				FF1F78D41AF8541A00913878 /* Common.m in Sources */,
 				FF1F78B51AF84E0C00913878 /* ViewController.m in Sources */,
 				FF1F78B21AF84E0C00913878 /* AppDelegate.m in Sources */,
+				6C19A4DA1AFE469400EDDEED /* MainTableViewController.m in Sources */,
 				FF1F78AF1AF84E0C00913878 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +428,7 @@
 				FF1F78CE1AF84E0C00913878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF1F78CF1AF84E0C00913878 /* Build configuration list for PBXNativeTarget "QMHexTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +437,7 @@
 				FF1F78D11AF84E0C00913878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
