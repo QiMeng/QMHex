@@ -273,7 +273,6 @@
     return [self OctFromDec:dec];
 }
 
-
 + (NSString *)hexFromInt:(int)aHex {
     
     switch (aHex) {
@@ -323,9 +322,37 @@
     }
 }
 
-//Decimal system
-//Hexadecimal
 
+
+//原码的编码规律可概括为:正数的符号位用 0 表示,负数的符号位用 1 表示,数位 部分则和真值完全一样。
+//反码又称为“对 1 的补数”,对于正数,反码和原码相同,对于负数,是将原码数位部分 按位求反。
+//补码的表示:正数的补码与原码相同,负数的补码符号位为 1,数值位是将原码按位取 反后末位加 1。(以 8 位二进制数为基准进行表示)
+/**
+ *  二进制转换成原码
+ */
++ (NSString *)OriginalFromBin:(float )aBin{
+//    原码的编码规律可概括为:正数的符号位用 0 表示,负数的符号位用 1 表示,数位 部分则和真值完全一样。
+    if (aBin > 0) {
+        return [NSString stringWithFormat:@""];
+    }
+    
+    
+    
+    
+    return @"";
+}
+/**
+ *  原码转换成反码
+ */
++ (NSString *)CounterFromBin:(float )aBin{
+    return @"";
+}
+/**
+ *  原码转换成补码
+ */
++ (NSString *)FillFromBin:(float )aBin{
+    return @"";
+}
 
 
 @end
