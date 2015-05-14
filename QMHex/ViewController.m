@@ -18,9 +18,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    float a = -100.001;
+    NSString * str = [NSString stringWithFormat:@"%f",a];
+    
+    NSLog(@"str : %@",str);
+    
+    
+    
     
 //    NSLog(@"十进制转二进制");
-//    NSLog(@"357 : %@",[Common BinFromDec:@"357"]);
+    NSLog(@"76 : %@",[Common BinFromDec:@"76"]);
 //    NSLog(@"54.369 : %@",[Common BinFromDec:@"54.369"]);
 //    NSLog(@"0.954 : %@",[Common BinFromDec:@"0.954"]);
 //    NSLog(@"54 : %@",[Common BinFromDec:@"54"]);

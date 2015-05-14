@@ -16,6 +16,9 @@
 		FF1F78BD1AF84E0C00913878 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1F78BB1AF84E0C00913878 /* LaunchScreen.xib */; };
 		FF1F78C91AF84E0C00913878 /* QMHexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1F78C81AF84E0C00913878 /* QMHexTests.m */; };
 		FF1F78D41AF8541A00913878 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1F78D31AF8541A00913878 /* Common.m */; };
+		FF737BCA1B0449940075BDA8 /* LabelTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FF737BC91B0449940075BDA8 /* LabelTextField.m */; };
+		FF737BCD1B047B6D0075BDA8 /* KeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF737BCC1B047B6D0075BDA8 /* KeyboardView.m */; };
+		FF737BCF1B047BB30075BDA8 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF737BCE1B047BB30075BDA8 /* KeyboardView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,11 @@
 		FF1F78C81AF84E0C00913878 /* QMHexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QMHexTests.m; sourceTree = "<group>"; };
 		FF1F78D21AF8541A00913878 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		FF1F78D31AF8541A00913878 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		FF737BC81B0449940075BDA8 /* LabelTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelTextField.h; sourceTree = "<group>"; };
+		FF737BC91B0449940075BDA8 /* LabelTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelTextField.m; sourceTree = "<group>"; };
+		FF737BCB1B047B6D0075BDA8 /* KeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardView.h; sourceTree = "<group>"; };
+		FF737BCC1B047B6D0075BDA8 /* KeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardView.m; sourceTree = "<group>"; };
+		FF737BCE1B047BB30075BDA8 /* KeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +101,13 @@
 				FF1F78B41AF84E0C00913878 /* ViewController.m */,
 				6C19A4D81AFE469400EDDEED /* MainTableViewController.h */,
 				6C19A4D91AFE469400EDDEED /* MainTableViewController.m */,
+				FF737BCB1B047B6D0075BDA8 /* KeyboardView.h */,
+				FF737BCC1B047B6D0075BDA8 /* KeyboardView.m */,
+				FF737BCE1B047BB30075BDA8 /* KeyboardView.xib */,
 				FF1F78D21AF8541A00913878 /* Common.h */,
 				FF1F78D31AF8541A00913878 /* Common.m */,
+				FF737BC81B0449940075BDA8 /* LabelTextField.h */,
+				FF737BC91B0449940075BDA8 /* LabelTextField.m */,
 				FF1F78B61AF84E0C00913878 /* Main.storyboard */,
 				FF1F78B91AF84E0C00913878 /* Images.xcassets */,
 				FF1F78BB1AF84E0C00913878 /* LaunchScreen.xib */,
@@ -210,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF1F78B81AF84E0C00913878 /* Main.storyboard in Resources */,
+				FF737BCF1B047BB30075BDA8 /* KeyboardView.xib in Resources */,
 				FF1F78BD1AF84E0C00913878 /* LaunchScreen.xib in Resources */,
 				FF1F78BA1AF84E0C00913878 /* Images.xcassets in Resources */,
 			);
@@ -231,7 +245,9 @@
 			files = (
 				FF1F78D41AF8541A00913878 /* Common.m in Sources */,
 				FF1F78B51AF84E0C00913878 /* ViewController.m in Sources */,
+				FF737BCA1B0449940075BDA8 /* LabelTextField.m in Sources */,
 				FF1F78B21AF84E0C00913878 /* AppDelegate.m in Sources */,
+				FF737BCD1B047B6D0075BDA8 /* KeyboardView.m in Sources */,
 				6C19A4DA1AFE469400EDDEED /* MainTableViewController.m in Sources */,
 				FF1F78AF1AF84E0C00913878 /* main.m in Sources */,
 			);
@@ -311,7 +327,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -348,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -359,9 +375,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Li Wei (4X728K54LX)";
 				INFOPLIST_FILE = QMHex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "63778686-107b-4e86-9b80-8ad7d1e15d93";
 			};
 			name = Debug;
 		};
@@ -369,9 +388,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Li Wei (4X728K54LX)";
 				INFOPLIST_FILE = QMHex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "63778686-107b-4e86-9b80-8ad7d1e15d93";
 			};
 			name = Release;
 		};

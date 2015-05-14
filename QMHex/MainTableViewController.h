@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LabelTextField.h"
+@interface MainTableViewController : UITableViewController <UITextFieldDelegate>
 
-@interface MainTableViewController : UITableViewController
+
+@property (weak, nonatomic) IBOutlet LabelTextField *binTextField;
+
+@property (weak, nonatomic) IBOutlet LabelTextField *octTextField;
+
+@property (weak, nonatomic) IBOutlet LabelTextField *decTextField;
+
+@property (weak, nonatomic) IBOutlet LabelTextField *hexTextField;
+
+
+
+
+
 
 @end
