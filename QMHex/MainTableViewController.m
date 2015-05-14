@@ -13,10 +13,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _binTextField.leftLabel.text = @"二进制:";
-    _octTextField.leftLabel.text = @"八进制:";
-    _decTextField.leftLabel.text = @"十进制:";
-    _hexTextField.leftLabel.text = @"十六进制:";
+    _binTextField.leftLabel.text = @"二进：";
+    _octTextField.leftLabel.text = @"八进：";
+    _decTextField.leftLabel.text = @"十进：";
+    _hexTextField.leftLabel.text = @"16进：";
+    _originalTextField.leftLabel.text = @"原码：";
+    _counterTextField.leftLabel.text = @"反码：";
+    _fillTextField.leftLabel.text = @"补码：";
     
     
     float a = -100.001;
@@ -63,24 +66,24 @@
         _decTextField.text = [Common DecFromHex:textField.text];
     }
     
+    _originalTextField.text = [Common OriginalFromBin:_binTextField.text];
+    _counterTextField.text = [Common CounterFromBin:_binTextField.text];
+    _fillTextField.text = [Common FillFromBin:_binTextField.text];
+    
 }
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    
-    if (_binTextField.editing) {
-        [self changeTextField:_binTextField];
-    }else if (_octTextField.editing){
-        [self changeTextField:_octTextField];
-    }else if (_decTextField.editing){
-        [self changeTextField:_decTextField];
-    }else if (_hexTextField.editing){
-        [self changeTextField:_hexTextField];
-    }
-    
-    
-    
-    
-    NSLog(@"%s",__func__);
-    [self.view endEditing:YES];
-}
+//- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+//    
+//    if (_binTextField.editing) {
+//        [self changeTextField:_binTextField];
+//    }else if (_octTextField.editing){
+//        [self changeTextField:_octTextField];
+//    }else if (_decTextField.editing){
+//        [self changeTextField:_decTextField];
+//    }else if (_hexTextField.editing){
+//        [self changeTextField:_hexTextField];
+//    }
+//    
+//    [self.view endEditing:YES];
+//}
 
 @end

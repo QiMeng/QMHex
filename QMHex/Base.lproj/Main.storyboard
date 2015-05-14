@@ -38,7 +38,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xb3-jf-4b8" id="YDu-Hi-rwh">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="二进制:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ncq-P8-aq5" customClass="LabelTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ncq-P8-aq5" customClass="LabelTextField">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -60,7 +60,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rff-Gm-sCZ" id="byP-7c-9oY">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="八进制:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mnm-Q7-eOc" customClass="LabelTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mnm-Q7-eOc" customClass="LabelTextField">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -82,7 +82,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wdZ-Qd-DHl" id="1II-Lt-1pd">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="十进制:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CS7-eJ-A13" customClass="LabelTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CS7-eJ-A13" customClass="LabelTextField">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -104,7 +104,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Gr-gr-2eT" id="dku-Cb-q2f">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="十六进制:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7jE-yE-53b" customClass="LabelTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7jE-yE-53b" customClass="LabelTextField">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -123,22 +123,24 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="原码转换" id="7SE-gK-3eU">
+                            <tableViewSection headerTitle="原码转换(8位二进制)" id="7SE-gK-3eU">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rjc-wH-sPW">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Rjc-wH-sPW">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rjc-wH-sPW" id="nKy-XJ-zgS">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="二进制:" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="pcZ-qd-hZl" customClass="LabelTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pcZ-qd-hZl" customClass="LabelTextField">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="Kra-5y-a7T" id="gVM-rc-2Rc"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="pcZ-qd-hZl" firstAttribute="leading" secondItem="nKy-XJ-zgS" secondAttribute="leading" id="3wk-le-W9B"/>
                                                 <constraint firstAttribute="bottom" secondItem="pcZ-qd-hZl" secondAttribute="bottom" id="C6r-zL-0s1"/>
@@ -147,20 +149,22 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RrP-ca-ReG">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="RrP-ca-ReG">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RrP-ca-ReG" id="CXf-VM-07K">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="二进制:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z66-JJ-x6r" customClass="LabelTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z66-JJ-x6r" customClass="LabelTextField">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="Kra-5y-a7T" id="gDs-um-zWF"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="z66-JJ-x6r" secondAttribute="trailing" id="79b-Hq-AX1"/>
                                                 <constraint firstItem="z66-JJ-x6r" firstAttribute="top" secondItem="CXf-VM-07K" secondAttribute="top" id="P4o-MM-c9Q"/>
@@ -169,20 +173,22 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nPO-ss-xo4">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="nPO-ss-xo4">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nPO-ss-xo4" id="u87-ZO-dBR">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="二进制:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QnB-fh-taM" customClass="LabelTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QnB-fh-taM" customClass="LabelTextField">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="Kra-5y-a7T" id="x8D-ki-pQQ"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="QnB-fh-taM" firstAttribute="top" secondItem="u87-ZO-dBR" secondAttribute="top" id="80A-OM-2K4"/>
                                                 <constraint firstAttribute="bottom" secondItem="QnB-fh-taM" secondAttribute="bottom" id="RA8-78-oMd"/>
@@ -212,14 +218,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="binTextField" destination="Ncq-P8-aq5" id="bFg-3j-WV9"/>
+                        <outlet property="counterTextField" destination="z66-JJ-x6r" id="6Q2-ua-Y0r"/>
                         <outlet property="decTextField" destination="CS7-eJ-A13" id="vAI-r6-ap4"/>
+                        <outlet property="fillTextField" destination="QnB-fh-taM" id="vm3-do-XFU"/>
                         <outlet property="hexTextField" destination="7jE-yE-53b" id="EHc-t0-d8f"/>
                         <outlet property="octTextField" destination="mnm-Q7-eOc" id="VgH-vY-vRg"/>
+                        <outlet property="originalTextField" destination="pcZ-qd-hZl" id="0Zf-zL-JwV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rsk-D4-Vnm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243" y="1067"/>
+            <point key="canvasLocation" x="1075" y="1067"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WiO-PP-QUZ">

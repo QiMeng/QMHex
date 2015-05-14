@@ -14,9 +14,12 @@
     [super awakeFromNib];
     
     if (!_leftLabel) {
-        UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 80, self.frame.size.height)];
+        UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 70, self.frame.size.height)];
         label.backgroundColor = [UIColor clearColor];
-        label.textAlignment = NSTextAlignmentCenter;
+        label.adjustsFontSizeToFitWidth = YES;
+        label.textAlignment = NSTextAlignmentRight;
+        label.textColor = self.textColor;
+        label.font = self.font;
         _leftLabel = label;
     }
     self.keyboardType = UIKeyboardTypeDefault;

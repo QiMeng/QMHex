@@ -330,28 +330,32 @@
 /**
  *  二进制转换成原码
  */
-+ (NSString *)OriginalFromBin:(float )aBin{
++ (NSString *)OriginalFromBin:(NSString *)aBin{
 //    原码的编码规律可概括为:正数的符号位用 0 表示,负数的符号位用 1 表示,数位 部分则和真值完全一样。
-    if (aBin > 0) {
-        return [NSString stringWithFormat:@""];
+
+    NSArray * arr = [aBin componentsSeparatedByString:@"."];
+    
+    double douBin = aBin.doubleValue;
+    
+    if (douBin > 0) {
+        
     }
     
     
     
-    
-    return @"";
+    return @"原码";
 }
 /**
  *  原码转换成反码
  */
-+ (NSString *)CounterFromBin:(float )aBin{
-    return @"";
++ (NSString *)CounterFromBin:(NSString *)aBin{
+    return @"反码";
 }
 /**
  *  原码转换成补码
  */
-+ (NSString *)FillFromBin:(float )aBin{
-    return @"";
++ (NSString *)FillFromBin:(NSString *)aBin{
+    return @"补码";
 }
 
 

@@ -78,15 +78,15 @@
 /**
  *  二进制转换成原码
  */
-+ (NSString *)OriginalFromBin:(float )aBin;
++ (NSString *)OriginalFromBin:(NSString *)aBin;
 /**
  *  原码转换成反码
  */
-+ (NSString *)CounterFromBin:(float )aBin;
++ (NSString *)CounterFromBin:(NSString *)aBin;
 /**
  *  原码转换成补码
  */
-+ (NSString *)FillFromBin:(float )aBin;
++ (NSString *)FillFromBin:(NSString *)aBin;
 
 
 

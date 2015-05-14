@@ -19,6 +19,11 @@
 
 @property (weak, nonatomic) IBOutlet LabelTextField *hexTextField;
 
+@property (weak, nonatomic) IBOutlet LabelTextField *originalTextField;
+
+@property (weak, nonatomic) IBOutlet LabelTextField *counterTextField;
+
+@property (weak, nonatomic) IBOutlet LabelTextField *fillTextField;
 
 
 
