@@ -8,6 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KeyboardView : UIView
+typedef enum
+{
+    INT_BIN,
+    INT_OCT,
+    INT_DEC,
+    INT_HEX
+}
+HexType;
+
+
+@interface KeyboardView : UIView {
+    
+    UITextField * _textField;
+    NSMutableDictionary * _buttonDic;
+    
+}
+@property (nonatomic, assign) HexType type;
+
+- (instancetype)initWithTextField:(UITextField *)textField;
+
+//判断小数点
+- (void)decimalPoint;
 
 @end

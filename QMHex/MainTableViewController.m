@@ -8,6 +8,7 @@
 
 #import "MainTableViewController.h"
 #import "Common.h"
+#import "KeyboardView.h"
 @implementation MainTableViewController 
 
 - (void)viewDidLoad {
@@ -20,6 +21,8 @@
     _originalTextField.leftLabel.text = @"原码：";
     _counterTextField.leftLabel.text = @"反码：";
     _fillTextField.leftLabel.text = @"补码：";
+    
+
     
     
     float a = -100.001;
@@ -35,6 +38,29 @@
     }
     
     return 20;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+    if (textField == _binTextField) {
+        [((KeyboardView *)_binTextField.inputView) setType:INT_BIN];
+    }
+    else if (textField == _octTextField){
+        [((KeyboardView *)_octTextField.inputView) setType:INT_OCT];
+    }
+    else if (textField == _decTextField){
+        [((KeyboardView *)_decTextField.inputView) setType:INT_DEC];
+    }
+    else if (textField == _hexTextField){
+        [((KeyboardView *)_hexTextField.inputView) setType:INT_HEX];
+    }
+    
+    [((KeyboardView *)textField.inputView) decimalPoint];
+    
+}
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    [self changeTextField:textField];
+    return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

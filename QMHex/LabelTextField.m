@@ -8,6 +8,8 @@
 
 #import "LabelTextField.h"
 
+#import "KeyboardView.h"
+
 @implementation LabelTextField
 
 - (void)awakeFromNib {
@@ -26,6 +28,9 @@
     self.returnKeyType = UIReturnKeyDone;
     self.leftView = _leftLabel;
     self.leftViewMode = UITextFieldViewModeAlways;
+    
+    self.inputView = [[KeyboardView alloc]initWithTextField:self];
+    
 }
 - (void)layoutSubviews {
     [super layoutSubviews];
