@@ -107,7 +107,7 @@ const CGFloat kKeyboardHeight = 250.0f;
 - (void)makeButtonFrame:(CGRect)aRect title:(NSString *)aTitle imageName:(NSString *)aImageName
 {
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];//[[UIButton alloc] initWithFrame:aRect];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = aRect;
     CGFloat fontSize = 25.0f;
     
@@ -116,14 +116,20 @@ const CGFloat kKeyboardHeight = 250.0f;
 //    }
     
     button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
-    
+    [button setTitle:aTitle forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
-    [button setTitle:aTitle forState:UIControlStateNormal];
-    [button setBackgroundImage:[UIImage createImageWithColor:[UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1]]
-                      forState:UIControlStateDisabled];
-    [button addTarget:self action:@selector(touchButton:) forControlEvents:UIControlEventTouchUpInside];
     
+    /**
+     *  如果直接使用backgroundimage . 背景图片会遮住线条
+     */
+    [button setImage:[UIImage createImageWithColor:[UIColor whiteColor] withFrame:button.bounds] forState:UIControlStateNormal];
+    [button setImage:[UIImage createImageWithColor:[UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1.0] withFrame:button.bounds] forState:UIControlStateDisabled];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0.5, 0.5, 0.5, 0.5)];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -button.frame.size.width, 0, 0)];
+    
+    
+    [button addTarget:self action:@selector(touchButton:) forControlEvents:UIControlEventTouchUpInside];
     [_buttonDic setObject:button forKey:aTitle];
     
     [self addSubview:button];
