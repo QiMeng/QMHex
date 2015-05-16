@@ -68,6 +68,19 @@
     return YES;
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    if (textField == _currentTextField &&  textField.text.length >= [GUserDefault digit]) {
+        
+        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"设置是%ld进制",(long)[GUserDefault digit]]
+                                  maskType:SVProgressHUDMaskTypeBlack];
+        
+        return NO;
+    }
+    return YES;
+}
+
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     [self changeTextField:textField];
