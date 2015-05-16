@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		18612D76B08BF47EB2EA2DA9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A4EFA2A550F3BCD616C3B /* libPods.a */; };
 		6C19A4DA1AFE469400EDDEED /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C19A4D91AFE469400EDDEED /* MainTableViewController.m */; };
+		6CF652FB1B06F836004508E8 /* UserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF652FA1B06F836004508E8 /* UserDefault.m */; };
 		FF1F78AF1AF84E0C00913878 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1F78AE1AF84E0C00913878 /* main.m */; };
 		FF1F78B21AF84E0C00913878 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1F78B11AF84E0C00913878 /* AppDelegate.m */; };
-		FF1F78B51AF84E0C00913878 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1F78B41AF84E0C00913878 /* ViewController.m */; };
 		FF1F78B81AF84E0C00913878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1F78B61AF84E0C00913878 /* Main.storyboard */; };
 		FF1F78BA1AF84E0C00913878 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1F78B91AF84E0C00913878 /* Images.xcassets */; };
 		FF1F78BD1AF84E0C00913878 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1F78BB1AF84E0C00913878 /* LaunchScreen.xib */; };
@@ -36,6 +36,9 @@
 		4982C12E43F6E477E2816548 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6C19A4D81AFE469400EDDEED /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
 		6C19A4D91AFE469400EDDEED /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		6CF652F91B06F836004508E8 /* UserDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefault.h; sourceTree = "<group>"; };
+		6CF652FA1B06F836004508E8 /* UserDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefault.m; sourceTree = "<group>"; };
+		6CF652FC1B06F974004508E8 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		DCBAA34830B190B155B720D5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EC1A4EFA2A550F3BCD616C3B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1F78A91AF84E0C00913878 /* QMHex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QMHex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,8 +46,6 @@
 		FF1F78AE1AF84E0C00913878 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FF1F78B01AF84E0C00913878 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FF1F78B11AF84E0C00913878 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FF1F78B31AF84E0C00913878 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FF1F78B41AF84E0C00913878 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FF1F78B71AF84E0C00913878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF1F78B91AF84E0C00913878 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FF1F78BC1AF84E0C00913878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -89,6 +90,37 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6CF652F61B06F6E7004508E8 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				FF8D83571B05E6ED00E91225 /* UIImage+QM.h */,
+				FF8D83581B05E6ED00E91225 /* UIImage+QM.m */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		6CF652F71B06F74A004508E8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF737BC81B0449940075BDA8 /* LabelTextField.h */,
+				FF737BC91B0449940075BDA8 /* LabelTextField.m */,
+				FF737BCB1B047B6D0075BDA8 /* KeyboardView.h */,
+				FF737BCC1B047B6D0075BDA8 /* KeyboardView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6CF652F81B06F7EB004508E8 /* help */ = {
+			isa = PBXGroup;
+			children = (
+				FF1F78D21AF8541A00913878 /* Common.h */,
+				FF1F78D31AF8541A00913878 /* Common.m */,
+				6CF652F91B06F836004508E8 /* UserDefault.h */,
+				6CF652FA1B06F836004508E8 /* UserDefault.m */,
+			);
+			name = help;
+			sourceTree = "<group>";
+		};
 		A6561A9C3D42B1FA463ECE0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,19 +154,12 @@
 			children = (
 				FF1F78B01AF84E0C00913878 /* AppDelegate.h */,
 				FF1F78B11AF84E0C00913878 /* AppDelegate.m */,
-				FF1F78B31AF84E0C00913878 /* ViewController.h */,
-				FF1F78B41AF84E0C00913878 /* ViewController.m */,
 				6C19A4D81AFE469400EDDEED /* MainTableViewController.h */,
 				6C19A4D91AFE469400EDDEED /* MainTableViewController.m */,
-				FF737BCB1B047B6D0075BDA8 /* KeyboardView.h */,
-				FF737BCC1B047B6D0075BDA8 /* KeyboardView.m */,
-				FF1F78D21AF8541A00913878 /* Common.h */,
-				FF1F78D31AF8541A00913878 /* Common.m */,
-				FF737BC81B0449940075BDA8 /* LabelTextField.h */,
-				FF737BC91B0449940075BDA8 /* LabelTextField.m */,
+				6CF652F81B06F7EB004508E8 /* help */,
+				6CF652F71B06F74A004508E8 /* View */,
+				6CF652F61B06F6E7004508E8 /* lib */,
 				FF1F78B61AF84E0C00913878 /* Main.storyboard */,
-				FF8D83571B05E6ED00E91225 /* UIImage+QM.h */,
-				FF8D83581B05E6ED00E91225 /* UIImage+QM.m */,
 				FF1F78B91AF84E0C00913878 /* Images.xcassets */,
 				FF1F78BB1AF84E0C00913878 /* LaunchScreen.xib */,
 				FF1F78AC1AF84E0C00913878 /* Supporting Files */,
@@ -147,6 +172,7 @@
 			children = (
 				FF1F78AD1AF84E0C00913878 /* Info.plist */,
 				FF1F78AE1AF84E0C00913878 /* main.m */,
+				6CF652FC1B06F974004508E8 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -304,10 +330,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF1F78D41AF8541A00913878 /* Common.m in Sources */,
-				FF1F78B51AF84E0C00913878 /* ViewController.m in Sources */,
 				FF8D83591B05E6ED00E91225 /* UIImage+QM.m in Sources */,
 				FF737BCA1B0449940075BDA8 /* LabelTextField.m in Sources */,
 				FF1F78B21AF84E0C00913878 /* AppDelegate.m in Sources */,
+				6CF652FB1B06F836004508E8 /* UserDefault.m in Sources */,
 				FF737BCD1B047B6D0075BDA8 /* KeyboardView.m in Sources */,
 				6C19A4DA1AFE469400EDDEED /* MainTableViewController.m in Sources */,
 				FF1F78AF1AF84E0C00913878 /* main.m in Sources */,
@@ -438,6 +464,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Li Wei (4X728K54LX)";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/QMHex/PrefixHeader.pch";
 				INFOPLIST_FILE = QMHex/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -452,6 +480,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Li Wei (4X728K54LX)";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/QMHex/PrefixHeader.pch";
 				INFOPLIST_FILE = QMHex/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

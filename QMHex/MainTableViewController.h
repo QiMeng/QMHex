@@ -10,7 +10,7 @@
 #import "LabelTextField.h"
 @interface MainTableViewController : UITableViewController <UITextFieldDelegate>
 
-
+//进制转换
 @property (weak, nonatomic) IBOutlet LabelTextField *binTextField;
 
 @property (weak, nonatomic) IBOutlet LabelTextField *octTextField;
@@ -19,10 +19,10 @@
 
 @property (weak, nonatomic) IBOutlet LabelTextField *hexTextField;
 
+//原码转换
+@property (weak, nonatomic) IBOutlet LabelTextField *currentTextField;
 @property (weak, nonatomic) IBOutlet LabelTextField *originalTextField;
-
 @property (weak, nonatomic) IBOutlet LabelTextField *counterTextField;
-
 @property (weak, nonatomic) IBOutlet LabelTextField *fillTextField;
 
 

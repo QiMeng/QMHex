@@ -125,12 +125,34 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="原码转换(8位二进制)" id="7SE-gK-3eU">
                                 <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="kVg-N2-gao">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kVg-N2-gao" id="5df-Ic-NVN">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZCp-Ob-IwA" customClass="LabelTextField">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="Kra-5y-a7T" id="XSW-1k-UDm"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZCp-Ob-IwA" firstAttribute="top" secondItem="5df-Ic-NVN" secondAttribute="top" id="4eK-Ef-3Qw"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZCp-Ob-IwA" secondAttribute="bottom" id="DNg-k1-I4w"/>
+                                                <constraint firstItem="ZCp-Ob-IwA" firstAttribute="leading" secondItem="5df-Ic-NVN" secondAttribute="leading" id="hDV-XB-p9N"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZCp-Ob-IwA" secondAttribute="trailing" id="sLC-YY-Hwe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Rjc-wH-sPW">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rjc-wH-sPW" id="nKy-XJ-zgS">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pcZ-qd-hZl" customClass="LabelTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pcZ-qd-hZl" customClass="LabelTextField">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
@@ -154,7 +176,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RrP-ca-ReG" id="CXf-VM-07K">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z66-JJ-x6r" customClass="LabelTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z66-JJ-x6r" customClass="LabelTextField">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
@@ -219,6 +241,7 @@
                     <connections>
                         <outlet property="binTextField" destination="Ncq-P8-aq5" id="bFg-3j-WV9"/>
                         <outlet property="counterTextField" destination="z66-JJ-x6r" id="6Q2-ua-Y0r"/>
+                        <outlet property="currentTextField" destination="ZCp-Ob-IwA" id="Xy5-nO-oqR"/>
                         <outlet property="decTextField" destination="CS7-eJ-A13" id="vAI-r6-ap4"/>
                         <outlet property="fillTextField" destination="QnB-fh-taM" id="vm3-do-XFU"/>
                         <outlet property="hexTextField" destination="7jE-yE-53b" id="EHc-t0-d8f"/>

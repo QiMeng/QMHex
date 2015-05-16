@@ -18,17 +18,22 @@
     _octTextField.leftLabel.text = @"八进：";
     _decTextField.leftLabel.text = @"十进：";
     _hexTextField.leftLabel.text = @"16进：";
+    
+    _currentTextField.leftLabel.text = @"原数：";
     _originalTextField.leftLabel.text = @"原码：";
     _counterTextField.leftLabel.text = @"反码：";
     _fillTextField.leftLabel.text = @"补码：";
     
 
+    int a = -123456789;
     
+    NSString *s = [NSString stringWithFormat:@"%%.%dd",10];
     
-    float a = -100.001;
-    NSString * str = [NSString stringWithFormat:@"%g",a];
+    NSString * str = [NSString stringWithFormat:s,a];
     
     NSLog(@"str : %@",str);
+    
+    DDLogDebug(str);
     
 }
 
@@ -42,17 +47,17 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     
-    if (textField == _binTextField) {
-        [((KeyboardView *)_binTextField.inputView) setType:INT_BIN];
+    if (textField == _binTextField || textField == _currentTextField) {
+        [((KeyboardView *)textField.inputView) setType:INT_BIN];
     }
     else if (textField == _octTextField){
-        [((KeyboardView *)_octTextField.inputView) setType:INT_OCT];
+        [((KeyboardView *)textField.inputView) setType:INT_OCT];
     }
     else if (textField == _decTextField){
-        [((KeyboardView *)_decTextField.inputView) setType:INT_DEC];
+        [((KeyboardView *)textField.inputView) setType:INT_DEC];
     }
     else if (textField == _hexTextField){
-        [((KeyboardView *)_hexTextField.inputView) setType:INT_HEX];
+        [((KeyboardView *)textField.inputView) setType:INT_HEX];
     }
     
     [((KeyboardView *)textField.inputView) decimalPoint];
@@ -91,10 +96,13 @@
         _octTextField.text = [Common OctFromHex:textField.text];
         _decTextField.text = [Common DecFromHex:textField.text];
     }
+    else if (textField == _currentTextField) {
+        _originalTextField.text = [Common OriginalFromBin:textField.text];
+        _counterTextField.text = [Common CounterFromBin:textField.text];
+        _fillTextField.text = [Common FillFromBin:textField.text];
+    }
     
-    _originalTextField.text = [Common OriginalFromBin:_binTextField.text];
-    _counterTextField.text = [Common CounterFromBin:_binTextField.text];
-    _fillTextField.text = [Common FillFromBin:_binTextField.text];
+    
     
 }
 //- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {

@@ -14,19 +14,29 @@
 //二进制转换成十进制
 + (NSString *)DecFromBin:(NSString *)aBin {
     
-    NSString * strBin = @"";
+    if (aBin.length ==0) {
+        return @"";
+    }
+    NSString * lastStr = @"";
     NSArray * arr = [aBin componentsSeparatedByString:@"."];
-    
     //整数部分
     {
+        
         NSString * strInt = arr[0];
+        
+        BOOL isNega = NO;
+        if ([strInt hasPrefix:@"-"]) {
+            isNega = YES;
+            strInt = [strInt substringFromIndex:1];
+        }
+
         int intDec = 0;
         int tempDec = 0;
         for (int i = 0; i < strInt.length; i++) {
             tempDec = [[strInt substringWithRange:NSMakeRange(i,1)] intValue];
             intDec =  intDec + tempDec * pow(2, strInt.length - 1 - i);
         }
-        strBin = [NSString stringWithFormat:@"%d",intDec];
+        lastStr = [NSString stringWithFormat:@"%@%d",isNega?@"-":@"",intDec];
     }
     //小数部分
     if (arr.count == 2) {
@@ -39,18 +49,28 @@
             douDec = douDec + tempDec * pow(2, -i-1);
             
         }
-        strBin = [NSString stringWithFormat:@"%g",strBin.doubleValue+ douDec];
+        lastStr = [NSString stringWithFormat:@"%g",lastStr.doubleValue+ douDec];
     }
-    return strBin;
+    return lastStr;
 }
 //二进制转换成八进制
 + (NSString *)OctFromBin:(NSString *)aBin {
     
-    NSString * strBin = @"";
+    if (aBin.length ==0) {
+        return @"";
+    }
+    NSString * lastStr = @"";
     NSArray * arr = [aBin componentsSeparatedByString:@"."];
     //整数部分
     {
         NSString * strInt = arr[0];
+        
+        BOOL isNega = NO;
+        if ([strInt hasPrefix:@"-"]) {
+            isNega = YES;
+            strInt = [strInt substringFromIndex:1];
+        }
+        
         if (strInt.length%3 == 1) {
             strInt = [NSString stringWithFormat:@"00%@",strInt];
         }else if (strInt.length%3 == 2) {
@@ -64,8 +84,9 @@
                 int a = [[tempStr substringWithRange:NSMakeRange(j,1)] intValue];
                 bit = bit + a * pow(2, 2-j);
             }
-            strBin = [NSString stringWithFormat:@"%@%d",strBin,bit];
+            lastStr = [NSString stringWithFormat:@"%@%d",lastStr,bit];
         }
+        lastStr = [NSString stringWithFormat:@"%@%@",isNega?@"-":@"",lastStr];
     }
     //小数部分
     if (arr.count == 2) {
@@ -85,17 +106,28 @@
             }
             tempDec = [NSString stringWithFormat:@"%@%d",tempDec,bit];
         }
-        strBin = [NSString stringWithFormat:@"%@.%@",strBin,tempDec];
+        lastStr = [NSString stringWithFormat:@"%@.%@",lastStr,tempDec];
     }
-    return strBin;
+    return lastStr;
 }
 //二进制转换成十六进制
 + (NSString *)HexFromBin:(NSString *)aBin {
-    NSString * strBin = @"";
+    
+    if (aBin.length ==0) {
+        return @"";
+    }
+    NSString * lastStr = @"";
     NSArray * arr = [aBin componentsSeparatedByString:@"."];
     //整数部分
     {
         NSString * strInt = arr[0];
+        
+        BOOL isNega = NO;
+        if ([strInt hasPrefix:@"-"]) {
+            isNega = YES;
+            strInt = [strInt substringFromIndex:1];
+        }
+        
         if (strInt.length%4 == 1) {
             strInt = [NSString stringWithFormat:@"000%@",strInt];
         }else if (strInt.length%4 == 2) {
@@ -111,8 +143,9 @@
                 int a = [[tempStr substringWithRange:NSMakeRange(j,1)] intValue];
                 bit = bit + a * pow(2, 3-j);
             }
-            strBin = [NSString stringWithFormat:@"%@%@",strBin,[self hexFromInt:bit]];
+            lastStr = [NSString stringWithFormat:@"%@%@",lastStr,[self hexFromInt:bit]];
         }
+        lastStr = [NSString stringWithFormat:@"%@%@",isNega?@"-":@"",lastStr];
     }
     //小数部分
     if (arr.count == 2) {
@@ -135,20 +168,28 @@
             tempDec = [NSString stringWithFormat:@"%@%@",tempDec,[self hexFromInt:bit]];
 
         }
-        strBin = [NSString stringWithFormat:@"%@.%@",strBin,tempDec];
+        lastStr = [NSString stringWithFormat:@"%@.%@",lastStr,tempDec];
     }
-    return strBin;
+    return lastStr;
 }
 
 
 #pragma mark - 八进制
 //八进制转换成二进制
 + (NSString *)BinFromOct:(NSString *)aOct {
+    if (aOct.length == 0) {
+        return @"";
+    }
     NSString * dec = [self DecFromOct:aOct];
     return [self BinFromDec:dec];
 }
 //八进制转十进制
 + (NSString *)DecFromOct:(NSString *)aOct {
+    
+    if (aOct.length == 0) {
+        return @"";
+    }
+    
     NSArray * arr = [aOct componentsSeparatedByString:@"."];
     
     NSString * lastStr = @"";
@@ -156,13 +197,19 @@
     {
         NSString * strInt = arr[0];
         
+        BOOL isNega = NO;
+        if ([strInt hasPrefix:@"-"]) {
+            isNega = YES;
+            strInt = [strInt substringFromIndex:1];
+        }
+        
         int sum = 0;
         for (int i = 0;i<strInt.length;i++) {
             NSString * temp = [strInt substringWithRange:NSMakeRange(i,1)];
             int bit = [self intFromHex:temp];
             sum = sum + bit * pow(8, strInt.length - 1 - i);
         }
-        lastStr = [NSString stringWithFormat:@"%d",sum];
+        lastStr = [NSString stringWithFormat:@"%@%d",isNega?@"-":@"",sum];
     }
     //小数部分
     if (arr.count == 2) {
@@ -179,6 +226,11 @@
 }
 //八进制转十六进制
 + (NSString *)HexFromOct:(NSString *)aOct {
+    
+    if (aOct.length == 0) {
+        return @"";
+    }
+    
     NSString * dec = [self DecFromOct:aOct];
     return [self HexFromDec:dec];
 }
@@ -188,12 +240,24 @@
 #pragma mark - 十进制转
 //十进制转换成二进制
 + (NSString *)BinFromDec:(NSString *)aDec {
+    
+    if (aDec.length == 0) {
+        return @"";
+    }
+    
     NSString * strBIN = @"";
     NSArray * arr = [aDec componentsSeparatedByString:@"."];
     
     //整数部分
     {
         NSString * strInt = arr[0];
+        
+        BOOL isNega = NO;
+        if ([strInt hasPrefix:@"-"]) {
+            isNega = YES;
+            strInt = [strInt substringFromIndex:1];
+        }
+        
         int intDec = strInt.intValue;
         if (intDec == 0) {
             strBIN = @"0";
@@ -202,6 +266,7 @@
             strBIN = [NSString stringWithFormat:@"%d%@",intDec%2,strBIN];
             intDec = intDec/2;
         }
+        strBIN = [NSString stringWithFormat:@"%@%@",isNega?@"-":@"", strBIN];
     }
     //小数部分
     if (arr.count == 2) {
@@ -221,11 +286,21 @@
 }
 //十进制转八进制
 + (NSString *)OctFromDec:(NSString *)aDec {
+    
+    if (aDec.length == 0) {
+        return @"";
+    }
+    
     NSString * bin = [self BinFromDec:aDec];
     return [self OctFromBin:bin];
 }
 //十进制转十六进制
 + (NSString *)HexFromDec:(NSString *)aDec {
+    
+    if (aDec.length == 0) {
+        return @"";
+    }
+    
     NSString * bin = [self BinFromDec:aDec];
     return [self HexFromBin:bin];
 }
@@ -234,6 +309,10 @@
 //十六进制转十进制
 + (NSString *)DecFromHex:(NSString *)aHex {
     
+    if (aHex.length == 0) {
+        return @"";
+    }
+    
     NSArray * arr = [aHex componentsSeparatedByString:@"."];
     
     NSString * lastStr = @"";
@@ -241,13 +320,19 @@
     {
         NSString * strInt = arr[0];
         
+        BOOL isNega = NO;
+        if ([strInt hasPrefix:@"-"]) {
+            isNega = YES;
+            strInt = [strInt substringFromIndex:1];
+        }
+        
         int sum = 0;
         for (int i = 0;i<strInt.length;i++) {
             NSString * temp = [strInt substringWithRange:NSMakeRange(i,1)];
             int bit = [self intFromHex:temp];
             sum = sum + bit * pow(16, strInt.length - 1 - i);
         }
-        lastStr = [NSString stringWithFormat:@"%d",sum];
+        lastStr = [NSString stringWithFormat:@"%@%d",isNega?@"-":@"",sum];
     }
     //小数部分
     if (arr.count == 2) {
@@ -264,11 +349,21 @@
 }
 //十六进制转二进制
 + (NSString *)BinFromHex:(NSString *)aHex {
+    
+    if (aHex.length == 0) {
+        return @"";
+    }
+    
     NSString * dec = [self DecFromHex:aHex];
     return [self BinFromDec:dec];
 }
 //十六进制转八进制
 + (NSString *)OctFromHex:(NSString *)aHex {
+    
+    if (aHex.length == 0) {
+        return @"";
+    }
+    
     NSString * dec = [self DecFromHex:aHex];
     return [self OctFromDec:dec];
 }
@@ -337,13 +432,23 @@
     
     double douBin = aBin.doubleValue;
     
+    NSString * lastStr = @"";
+    //正数
     if (douBin > 0) {
         
+        int bin = [arr[0] intValue];
+        
+        NSString * s = [NSString stringWithFormat:@"%%.%ldd",(long)GUserDefault.digit];
+        lastStr = [NSString stringWithFormat:s,bin];
+        
+//        return [NSString stringWithFormat:@"%8g"]
+    }else {
+        //负数
     }
     
     
     
-    return @"原码";
+    return lastStr;
 }
 /**
  *  原码转换成反码
