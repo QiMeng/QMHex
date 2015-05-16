@@ -47,7 +47,7 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     
-    if (textField == _binTextField || textField == _currentTextField) {
+    if (textField == _binTextField ) {
         [((KeyboardView *)textField.inputView) setType:INT_BIN];
     }
     else if (textField == _octTextField){
@@ -58,6 +58,9 @@
     }
     else if (textField == _hexTextField){
         [((KeyboardView *)textField.inputView) setType:INT_HEX];
+    }
+    else if (textField == _currentTextField) {
+        [((KeyboardView *)textField.inputView) setType:INT_ORI];
     }
     
     [((KeyboardView *)textField.inputView) decimalPoint];
@@ -70,7 +73,7 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
-    if (textField == _currentTextField &&  textField.text.length >= [GUserDefault digit]) {
+    if (textField == _currentTextField &&  textField.text.length >= [GUserDefault digit]-1) {
         
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"设置是%ld进制",(long)[GUserDefault digit]]
                                   maskType:SVProgressHUDMaskTypeBlack];

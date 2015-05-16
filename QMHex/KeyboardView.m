@@ -39,6 +39,14 @@ const CGFloat kKeyboardHeight = 250.0f;
     _type = type;
     NSArray * unables = @[];
     switch (_type) {
+        case INT_ORI:
+        {
+            unables = @[@"A",@"B",@"C",@"D",@"E",@"F",
+                        @"7",@"8",@"9",
+                        @"4",@"5",@"6",//@"+/-",
+                        @"2",@"3",@"."];
+        }
+            break;
         case INT_BIN:
         {
             unables = @[@"A",@"B",@"C",@"D",@"E",@"F",

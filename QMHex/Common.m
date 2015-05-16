@@ -21,15 +21,12 @@
     NSArray * arr = [aBin componentsSeparatedByString:@"."];
     //整数部分
     {
-        
         NSString * strInt = arr[0];
-        
         BOOL isNega = NO;
         if ([strInt hasPrefix:@"-"]) {
             isNega = YES;
             strInt = [strInt substringFromIndex:1];
         }
-
         int intDec = 0;
         int tempDec = 0;
         for (int i = 0; i < strInt.length; i++) {
@@ -432,21 +429,23 @@
     
     double douBin = aBin.doubleValue;
     
-    NSString * lastStr = @"";
+    NSString * lastStr = @"0";
+
     //正数
-    if (douBin > 0) {
-        
+    {
         int bin = [arr[0] intValue];
-        
-        NSString * s = [NSString stringWithFormat:@"%%.%ldd",(long)GUserDefault.digit];
-        lastStr = [NSString stringWithFormat:s,bin];
-        
-//        return [NSString stringWithFormat:@"%8g"]
-    }else {
-        //负数
+        if (bin !=0) {
+            NSString * s = [NSString stringWithFormat:@"%%@%%.%ldd",(long)GUserDefault.digit-1];
+            lastStr = [NSString stringWithFormat:s,(douBin>=0?@"0,":@"1,"),abs(bin)];
+        }
     }
-    
-    
+    //小数
+    if (arr.count > 1) {
+        double dec = [[NSString stringWithFormat:@"0.%@",arr[1]] doubleValue];
+        NSString * s = [NSString stringWithFormat:@"%%.%ldf%%@",(long)GUserDefault.digit-2];
+        NSString * decStr = [NSString stringWithFormat:s,dec,(douBin>=0?@".0":@".1")];
+        lastStr = [NSString stringWithFormat:@"%@.%@",lastStr,[decStr substringFromIndex:2]];
+    }
     
     return lastStr;
 }
@@ -454,13 +453,69 @@
  *  原码转换成反码
  */
 + (NSString *)CounterFromBin:(NSString *)aBin{
-    return @"反码";
+
+    NSString * oriStr = [self OriginalFromBin:aBin];
+    
+    if ([oriStr hasSuffix:@"0,"] || ([oriStr hasSuffix:@".0"] && [oriStr hasPrefix:@"0."])) {
+        return oriStr;
+    }else {
+        
+        NSArray * arr = [oriStr componentsSeparatedByString:@","];
+        
+        NSString * lastStr = @"";
+        
+        if (arr.count > 1) {
+            
+            NSString * strInt = arr[1];
+            int tempDec = 0;
+            for (int i = 0; i < strInt.length; i++) {
+                tempDec = [[strInt substringWithRange:NSMakeRange(i,1)] intValue];
+                if (tempDec == 0) {
+                    tempDec = 1;
+                }else {
+                    tempDec = 0;
+                }
+                lastStr = [NSString stringWithFormat:@"%@%d",lastStr,tempDec];
+            }
+            
+            lastStr = [NSString stringWithFormat:@"%@,%@",arr[0],lastStr];
+        }
+        
+        return lastStr;
+
+        
+    }
+    
+    return @"";
 }
 /**
  *  原码转换成补码
  */
 + (NSString *)FillFromBin:(NSString *)aBin{
-    return @"补码";
+    
+    NSString * couStr = [self CounterFromBin:aBin];
+    
+    if ([couStr hasSuffix:@"0,"] || ([couStr hasSuffix:@".0"] && [couStr hasPrefix:@"0."])) {
+        return couStr;
+    }else {
+        NSString * lastStr = @"";
+        NSArray * arr = [couStr componentsSeparatedByString:@","];
+        
+        if (arr.count > 1) {
+            
+            int dec = [[self DecFromBin:arr[1]] intValue];
+            
+            dec += 1;
+            
+            lastStr = [self BinFromDec:[NSString stringWithFormat:@"%d",dec]];
+            
+            lastStr = [NSString stringWithFormat:@"%@,%@",arr[0],lastStr];
+        }
+        
+        return lastStr;
+    }
+    
+    
 }
 
 

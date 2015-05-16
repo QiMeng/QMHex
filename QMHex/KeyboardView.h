@@ -13,7 +13,8 @@ typedef enum
     INT_BIN,
     INT_OCT,
     INT_DEC,
-    INT_HEX
+    INT_HEX,
+    INT_ORI
 }
 HexType;
 
