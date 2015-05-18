@@ -14,6 +14,7 @@
 #import <SVProgressHUD.h>
 #import "UserDefault.h"
 
+错误
 /**
  *  app 软件在AppStore上的id
  */

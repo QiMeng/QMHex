@@ -58,7 +58,7 @@ const CGFloat kKeyboardHeight = 250.0f;
         case INT_OCT:
         {
             unables = @[@"A",@"B",@"C",@"D",@"E",@"F",
-                        @"9",];
+                        @"9",@"8"];
         }
             break;
         case INT_DEC:
