@@ -24,10 +24,7 @@
     setenv("XcodeColors", "YES", 0);
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];// 启用颜色区分
-//    DDLogError(@"错误信息"); // 红色
-//    DDLogWarn(@"警告"); // 橙色
-//    DDLogInfo(@"提示信息"); // 默认是黑色
-//    DDLogVerbose(@"详细信息"); // 默认是黑色
+    
     
     return YES;
 }
