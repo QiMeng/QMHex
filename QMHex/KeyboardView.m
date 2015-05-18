@@ -181,6 +181,12 @@ const CGFloat kKeyboardHeight = 250.0f;
     
 }
 - (void)decimalPoint {
+    
+    if (_type == INT_ORI) {
+        ((UIButton *)_buttonDic[@"."]).enabled = NO;
+        return;
+    }
+    
     NSRange foundObj=[_textField.text rangeOfString:@"."];
     if(foundObj.location ==NSNotFound) {
         ((UIButton *)_buttonDic[@"."]).enabled = YES;

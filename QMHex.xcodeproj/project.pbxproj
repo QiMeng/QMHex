@@ -20,6 +20,7 @@
 		FF737BCA1B0449940075BDA8 /* LabelTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FF737BC91B0449940075BDA8 /* LabelTextField.m */; };
 		FF737BCD1B047B6D0075BDA8 /* KeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF737BCC1B047B6D0075BDA8 /* KeyboardView.m */; };
 		FF8D83591B05E6ED00E91225 /* UIImage+QM.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8D83581B05E6ED00E91225 /* UIImage+QM.m */; };
+		FFEB12631B09B0B600A041AA /* SetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEB12621B09B0B600A041AA /* SetTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		FF737BCC1B047B6D0075BDA8 /* KeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardView.m; sourceTree = "<group>"; };
 		FF8D83571B05E6ED00E91225 /* UIImage+QM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QM.h"; sourceTree = "<group>"; };
 		FF8D83581B05E6ED00E91225 /* UIImage+QM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QM.m"; sourceTree = "<group>"; };
+		FFEB12611B09B0B600A041AA /* SetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewController.h; sourceTree = "<group>"; };
+		FFEB12621B09B0B600A041AA /* SetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,8 +157,7 @@
 			children = (
 				FF1F78B01AF84E0C00913878 /* AppDelegate.h */,
 				FF1F78B11AF84E0C00913878 /* AppDelegate.m */,
-				6C19A4D81AFE469400EDDEED /* MainTableViewController.h */,
-				6C19A4D91AFE469400EDDEED /* MainTableViewController.m */,
+				FFEB12601B09B09800A041AA /* ViewController */,
 				6CF652F81B06F7EB004508E8 /* help */,
 				6CF652F71B06F74A004508E8 /* View */,
 				6CF652F61B06F6E7004508E8 /* lib */,
@@ -192,6 +194,17 @@
 				FF1F78C71AF84E0C00913878 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFEB12601B09B09800A041AA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6C19A4D81AFE469400EDDEED /* MainTableViewController.h */,
+				6C19A4D91AFE469400EDDEED /* MainTableViewController.m */,
+				FFEB12611B09B0B600A041AA /* SetTableViewController.h */,
+				FFEB12621B09B0B600A041AA /* SetTableViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF1F78D41AF8541A00913878 /* Common.m in Sources */,
+				FFEB12631B09B0B600A041AA /* SetTableViewController.m in Sources */,
 				FF8D83591B05E6ED00E91225 /* UIImage+QM.m in Sources */,
 				FF737BCA1B0449940075BDA8 /* LabelTextField.m in Sources */,
 				FF1F78B21AF84E0C00913878 /* AppDelegate.m in Sources */,
@@ -463,6 +477,7 @@
 			baseConfigurationReference = 4982C12E43F6E477E2816548 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Li Wei (4X728K54LX)";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/QMHex/PrefixHeader.pch";
@@ -479,6 +494,7 @@
 			baseConfigurationReference = DCBAA34830B190B155B720D5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Li Wei (4X728K54LX)";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/QMHex/PrefixHeader.pch";

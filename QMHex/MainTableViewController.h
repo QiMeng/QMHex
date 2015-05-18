@@ -21,12 +21,15 @@
 
 //原码转换
 @property (weak, nonatomic) IBOutlet LabelTextField *currentTextField;
-@property (weak, nonatomic) IBOutlet LabelTextField *originalTextField;
-@property (weak, nonatomic) IBOutlet LabelTextField *counterTextField;
-@property (weak, nonatomic) IBOutlet LabelTextField *fillTextField;
+//@property (weak, nonatomic) IBOutlet LabelTextField *originalTextField;
+//@property (weak, nonatomic) IBOutlet LabelTextField *counterTextField;
+//@property (weak, nonatomic) IBOutlet LabelTextField *fillTextField;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *tureLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *comLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *onecomLabel;
 
 @end

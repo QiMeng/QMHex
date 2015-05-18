@@ -17,13 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    //5559512a67e58efd54005aac
-    [MobClick startWithAppkey:@"" reportPolicy:BATCH   channelId:@"ceshi"];
+    
+    [MobClick startWithAppkey:kUMengKey reportPolicy:BATCH   channelId:@"ceshi"];
     
     
-//    setenv("XcodeColors", "YES", 0);
-//    [DDLog addLogger:[DDTTYLogger sharedInstance]];
-//    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];// 启用颜色区分
+    setenv("XcodeColors", "YES", 0);
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];// 启用颜色区分
 //    DDLogError(@"错误信息"); // 红色
 //    DDLogWarn(@"警告"); // 橙色
 //    DDLogInfo(@"提示信息"); // 默认是黑色

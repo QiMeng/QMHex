@@ -14,6 +14,19 @@
 #import <SVProgressHUD.h>
 #import "UserDefault.h"
 
+/**
+ *  app 软件在AppStore上的id
+ */
+#define kAppID @""
+
+/**
+ *  友盟上的key
+ *  5559512a67e58efd54005aac
+ */
+#define kUMengKey @""
+
+
+
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

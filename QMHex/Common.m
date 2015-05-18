@@ -437,6 +437,8 @@
         if (bin !=0) {
             NSString * s = [NSString stringWithFormat:@"%%@%%.%ldd",(long)GUserDefault.digit-1];
             lastStr = [NSString stringWithFormat:s,(douBin>=0?@"0,":@"1,"),abs(bin)];
+        }else {
+            return @"0,0000000";
         }
     }
     //小数
@@ -456,7 +458,7 @@
 
     NSString * oriStr = [self OriginalFromBin:aBin];
     
-    if ([oriStr hasSuffix:@"0,"] || ([oriStr hasSuffix:@".0"] && [oriStr hasPrefix:@"0."])) {
+    if ([oriStr hasPrefix:@"0,"] || ([oriStr hasSuffix:@".0"] && [oriStr hasPrefix:@"0."])) {
         return oriStr;
     }else {
         
@@ -495,7 +497,7 @@
     
     NSString * couStr = [self CounterFromBin:aBin];
     
-    if ([couStr hasSuffix:@"0,"] || ([couStr hasSuffix:@".0"] && [couStr hasPrefix:@"0."])) {
+    if ([couStr hasPrefix:@"0,"] || ([couStr hasSuffix:@".0"] && [couStr hasPrefix:@"0."])) {
         return couStr;
     }else {
         NSString * lastStr = @"";

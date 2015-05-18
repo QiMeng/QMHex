@@ -14,25 +14,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _binTextField.leftLabel.text = @"二进：";
-    _octTextField.leftLabel.text = @"八进：";
-    _decTextField.leftLabel.text = @"十进：";
-    _hexTextField.leftLabel.text = @"16进：";
+    _binTextField.leftLabel.text = @"BIN  ：";
+    _octTextField.leftLabel.text = @"OCT ：";
+    _decTextField.leftLabel.text = @"DEC ：";
+    _hexTextField.leftLabel.text = @"HEX ：";
     
-    _currentTextField.leftLabel.text = @"原数：";
-    _originalTextField.leftLabel.text = @"原码：";
-    _counterTextField.leftLabel.text = @"反码：";
-    _fillTextField.leftLabel.text = @"补码：";
+    _currentTextField.leftLabel.text = @"BIN  ：";
+//    _originalTextField.leftLabel.text = @"TURECODE：";
+//    _counterTextField.leftLabel.text = @"COMPLEMENTAL CODE：";
+//    _fillTextField.leftLabel.text = @"ONES-COMPLEMENT CODE：";
     
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return 30;
-    }
-    
-    return 20;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    if (section == 0) {
+//        return 30;
+//    }
+//    
+//    return 20;
+//}
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     
@@ -102,9 +102,9 @@
         _decTextField.text = [Common DecFromHex:textField.text];
     }
     else if (textField == _currentTextField) {
-        _originalTextField.text = [Common OriginalFromBin:textField.text];
-        _counterTextField.text = [Common CounterFromBin:textField.text];
-        _fillTextField.text = [Common FillFromBin:textField.text];
+        _tureLabel.text = [Common OriginalFromBin:textField.text];
+        _onecomLabel.text = [Common CounterFromBin:textField.text];
+        _comLabel.text = [Common FillFromBin:textField.text];
     }
     
     
