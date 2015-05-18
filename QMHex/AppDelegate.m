@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <MobClick.h>
+#import <UMSocial.h>
 @interface AppDelegate ()
 
 @end
@@ -19,6 +20,7 @@
     // Override point for customization after application launch.
     
     [MobClick startWithAppkey:kUMengKey reportPolicy:BATCH   channelId:@"ceshi"];
+    [UMSocialData setAppKey:kUMengKey];
     
     
     setenv("XcodeColors", "YES", 0);

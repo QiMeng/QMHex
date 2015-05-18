@@ -8,7 +8,8 @@
 
 #import "SetTableViewController.h"
 
-@interface SetTableViewController ()
+#import <UMSocial.h>
+@interface SetTableViewController () <UMSocialUIDelegate>
 
 @end
 
@@ -39,7 +40,15 @@
     }
     else if (indexPath.section == 1 && indexPath.row == 1) {
         //分享
-        DDLogWarn(@"分享");
+
+        NSString *appURL = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%@",kAppID];
+        
+        [UMSocialSnsService presentSnsIconSheetView:self
+                                             appKey:kUMengKey
+                                          shareText:appURL
+                                         shareImage:nil
+                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToEmail,UMShareToSms,UMShareToSina,UMShareToTencent,nil]
+                                           delegate:self];
     }
 }
 
