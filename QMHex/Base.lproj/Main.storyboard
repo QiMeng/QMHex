@@ -152,7 +152,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rjc-wH-sPW" id="nKy-XJ-zgS">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pcZ-qd-hZl" customClass="LabelTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pcZ-qd-hZl" customClass="LabelTextField">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
@@ -176,7 +176,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RrP-ca-ReG" id="CXf-VM-07K">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z66-JJ-x6r" customClass="LabelTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z66-JJ-x6r" customClass="LabelTextField">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
@@ -235,6 +235,9 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="cG9-Aq-B1U" kind="push" id="v0b-KK-7bw"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -252,6 +255,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rsk-D4-Vnm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1075" y="1067"/>
+        </scene>
+        <!--说明-->
+        <scene sceneID="hbE-oQ-Rbr">
+            <objects>
+                <viewController id="cG9-Aq-B1U" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="khG-dE-1dA"/>
+                        <viewControllerLayoutGuide type="bottom" id="jdX-zl-Nx3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eLe-KF-SDw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WmT-Zu-uvi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">(1)	n进制转10进制：
+n进制中，每一位数值*n^(该数码的当前排位-1)之总和，得10进制的值。
+(小数部分算法：每一位数值*n^(-(1++))之总和，得10进制小数的值。)
+
+(2)	10进制转n进制：
+用10进制数值/n,得余数,直到10进制的值小于n,把所有余数排序颠倒,得到n进制的值。
+(小数部分算法：用10进制数值小数部分*n，记录新结果的整数部分，直到连续记录多次都为零时，停止记录。如遇无限循环小数，给予最大记录范围，停止记录。所有记录的整数部分，就是n进制的小数部分)
+
+(3)	n进制转m进制：n--&gt;(1)--&gt;(2)--&gt;m
+
+(4)	10进制小数转2进制浮点：
+整数部分直接转2进制，小数部分（通过对比每次0.5^(1++)累加之和，大于小数部分标记为0，小于等于标记为1）转成2进制。根据IEEE(32/64/128位)浮点标准，移位小数点，记录移动量。根据IEEE标准分配各部分二进制数值到相应位置即可。
+
+(5)	2进制浮点转10进制：逆向(4)的步骤即可。</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WmT-Zu-uvi" firstAttribute="top" secondItem="eLe-KF-SDw" secondAttribute="top" id="Agk-bG-2Pe"/>
+                            <constraint firstItem="WmT-Zu-uvi" firstAttribute="bottom" secondItem="jdX-zl-Nx3" secondAttribute="top" id="TIa-o9-uuy"/>
+                            <constraint firstAttribute="trailing" secondItem="WmT-Zu-uvi" secondAttribute="trailing" id="VHy-5r-VMs"/>
+                            <constraint firstItem="WmT-Zu-uvi" firstAttribute="leading" secondItem="eLe-KF-SDw" secondAttribute="leading" id="cBU-vA-WgC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="说明" id="wpa-o8-zez"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ekd-XL-9e4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718" y="1067"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WiO-PP-QUZ">

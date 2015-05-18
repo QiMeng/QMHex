@@ -24,17 +24,6 @@
     _counterTextField.leftLabel.text = @"反码：";
     _fillTextField.leftLabel.text = @"补码：";
     
-
-    int a = -123456789;
-    
-    NSString *s = [NSString stringWithFormat:@"%%.%dd",10];
-    
-    NSString * str = [NSString stringWithFormat:s,a];
-    
-    NSLog(@"str : %@",str);
-    
-    DDLogDebug(str);
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
