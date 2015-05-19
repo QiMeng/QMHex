@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [MobClick startWithAppkey:kUMengKey reportPolicy:BATCH   channelId:@"ceshi"];
+    [MobClick startWithAppkey:kUMengKey reportPolicy:BATCH   channelId:@"AppStore"];
     [UMSocialData setAppKey:kUMengKey];
     
     

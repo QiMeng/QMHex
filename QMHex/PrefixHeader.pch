@@ -14,7 +14,6 @@
 #import <SVProgressHUD.h>
 #import "UserDefault.h"
 
-//警告
 /**
  *  app 软件在AppStore上的id
  */
@@ -22,9 +21,9 @@
 
 /**
  *  友盟上的key
- *  5559512a67e58efd54005aac
+ *
  */
-#define kUMengKey @""
+#define kUMengKey @"5559512a67e58efd54005aac"
 
 
 
